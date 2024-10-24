@@ -1,0 +1,48 @@
+def add(n1 , n2):
+    return n1 + n2
+def subtract(n1 , n2):
+    return n1 - n2
+def multiply(n1 , n2):
+    return n1 * n2
+def divide(n1 , n2):
+    return n1 / n2
+operations = {"+" : add,
+        "-" : subtract,
+        "*" : multiply,
+        "/" : divide,
+}
+def calculator():
+    from art import logo
+    print(logo)
+    should_continue = True
+    first_number = int(input(f"Type the first number:"))
+    while should_continue:
+        for symbol in operations:
+            print(symbol)
+        mathematical_operator = input("pick an operaton:")
+        second_number = int(input(f"Type the second number:"))
+        answer =""
+        if mathematical_operator == "+":
+            addition = add(first_number,second_number)
+            answer = addition
+            print(answer)
+        elif mathematical_operator == "-":
+            subtraction = subtract(first_number,second_number)
+            answer = subtraction
+            print(answer)
+        elif mathematical_operator == "*":
+            multiplication = multiply(first_number,second_number)
+            answer = multiplication
+            print(answer)
+        elif mathematical_operator == "/":
+            division = divide(first_number,second_number)
+            answer = division
+            print(answer)
+        choice = input(f"Type 'y' to continue calculating with {answer}, or 'n' to start calculation")
+        if choice == 'y':
+            first_number = answer
+        else:
+            should_continue = False
+            print("\n" * 20)
+            calculator()
+calculator()
