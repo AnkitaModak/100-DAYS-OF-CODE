@@ -1,3 +1,4 @@
+The course link = https://www.udemy.com/share/103IHM3@SfALnlFcnSEkpUudsfzKD0ixRnGjyt51vu33mve_9m11uVmRevIMNAkHL1__kAfZzw==/
 Throughout this comprehensive course, we cover a massive amount of tools and technologies, including:
 
 Python 3 - the latest version of Python
