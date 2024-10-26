@@ -27,6 +27,7 @@ def game():
                     print(f"You have {turns} attempts remaining to guess the number.")
             if guess == answer:
                 print(f"You got it! The answer was {answer}")
+                return
             if turns == 0:
                 print(f"Pssst, the correct answer is {answer}")
             
