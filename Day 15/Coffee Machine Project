@@ -3,6 +3,7 @@ MENU = {
         "ingredients": {
             "water": 50,
             "coffee": 18,
+            "milk":0,
         },
         "cost": 1.5,
     },
@@ -33,12 +34,14 @@ def coffee_machine():
     while go_on == True:
         global MENU
         choice = input("What would you like?(espresso/latte/cappuccino):")
-        if resources["water"] < (MENU[choice]["ingredients"]["water"]):
-            print("Sorry there is not enough water")
+        if choice == "report":
+            print(resources)
+        elif resources["water"] < (MENU[choice]["ingredients"]["water"]):
+                print("Sorry there is not enough water")
         elif resources["milk"] < (MENU[choice]["ingredients"]["milk"]):
-            print("Sorry there is not enough milk")
+                print("Sorry there is not enough milk")
         elif resources["coffee"] < (MENU[choice]["ingredients"]["coffee"]):
-            print("Sorry there is not enough coffee")
+                print("Sorry there is not enough coffee")
         else:
             if choice == "espresso":
                 drink_name = "espresso"
@@ -53,7 +56,6 @@ def coffee_machine():
                 elif cost < total:
                     change = total - cost
                     resources["water"] -= (MENU["espresso"]["ingredients"]["water"])
-                    resources["milk"] -= (MENU["espresso"]["ingredients"]["milk"])
                     resources["coffee"] -= (MENU["espresso"]["ingredients"]["coffee"])
                     print(f"Here is ${change} in change.")
                     print(f"Here is your {drink_name} ☕️. Enjoy!")
@@ -91,8 +93,7 @@ def coffee_machine():
                     resources["coffee"] -= (MENU["cappuccino"]["ingredients"]["coffee"])
                     print(f"Here is ${change} in change.")
                     print(f"Here is your {drink_name} ☕️. Enjoy!")
-            elif choice == "report":
-                print(resources)
+
 
 coffee_machine()
 
