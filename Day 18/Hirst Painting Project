@@ -1,0 +1,42 @@
+""" comment out code is used to extract the colors"""
+""" you will have to download the image from google and move it into the file if you haven't already😊"""
+import turtle
+# import colorgram
+# rgb_colors = []
+# colors = colorgram.extract('image.jpg' , 38)
+# for color in colors:
+#    r = color.rgb.r
+#    g = color.rgb.g
+#    b = color.rgb.b
+#    new_color = (r,g,b)
+#    rgb_colors.append(new_color)
+#
+# print(rgb_colors)
+from turtle import Turtle,Screen
+import random
+
+tim = Turtle()
+turtle.colormode(255)
+color_list = [ (234, 242, 237), (225, 234, 240), (244, 235, 237), (120, 168, 196), (22, 38, 28), (40, 23, 19), (203, 71, 89), (203, 153, 111), (60, 92, 132), (126, 76, 68), (198, 140, 156), (230, 214, 93), (60, 112, 82), (144, 63, 82), (229, 166, 178), (178, 187, 214), (26, 30, 41), (150, 206, 219), (207, 81, 63), (49, 57, 105), (77, 63, 46), (133, 175, 145), (42, 81, 50), (88, 128, 174), (44, 26, 33), (232, 172, 163), (167, 206, 184), (105, 43, 40), (52, 158, 186), (149, 169, 64), (200, 204, 50), (108, 41, 54), (87, 158, 96)]
+tim.speed("fastest")
+tim.setheading(215)
+tim.penup()
+tim.forward(300)
+tim.pendown()
+tim.setheading(0)
+number_of_dots = 100
+for dot_count in range(1,number_of_dots + 1):
+    tim.dot(20,random.choice(color_list))
+    tim.penup()
+    tim.forward(50)
+    tim.pendown()
+    tim.dot(20, random.choice(color_list))
+    if dot_count % 10 == 0:
+        tim.setheading(90)
+        tim.penup()
+        tim.forward(50)
+        tim.setheading(180)
+        tim.forward(500)
+        tim.setheading(360)
+screen = Screen()
+screen.exitonclick()
