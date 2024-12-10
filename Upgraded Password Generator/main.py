@@ -62,10 +62,12 @@ def find_password():
             email = data[website_input.get()]["email"]
             password = data[website_input.get()]["password"]
             messagebox.showinfo(title = website_input.get() ,message= f"Email : {email}\nPassword : {password}" )
-    except FileNotFoundError :
+    except FileNotFoundError:
         messagebox.showerror(title="error" , message= "No data file found.")
     if len(website_input.get()) == 0:
         messagebox.showerror(title="error", message="It doesn't contain any information!")
+    elif website_input.get() not in data:
+        messagebox.showerror(title="error", message="No data file found.")
 
 
 
@@ -105,3 +107,4 @@ search_button.grid(column = 2 , row = 1)
 
 
 window.mainloop()
+
