@@ -50,8 +50,8 @@ else:
     letter = letter3.read()
 bd_letter = letter.replace("[NAME]" ,bd_person["name"] )
 import smtplib
-my_email = "ankitamodak1806@gmail.com"
-my_pass = "kkgcykjkkhbouyup"
+my_email = "enter your email"
+my_pass = "enter your password"
 connection = smtplib.SMTP("smtp.gmail.com", timeout=60, port=587)
 connection.starttls()
 connection.login(user=my_email, password=my_pass)
