@@ -31,17 +31,25 @@ resources = {
 }
 go_on = True
 def coffee_machine():
+    global go_on
     while go_on == True:
         global MENU
+        consent = input("Would you like a cup of coffee dear?(please type y or Y)")
+        if consent == "y" or consent == "Y":
+            go_on = True
+        else:
+            print("Thanks for coming!")
+            go_on = False
+            break
         choice = input("What would you like?(espresso/latte/cappuccino):")
         if choice == "report":
             print(resources)
         elif resources["water"] < (MENU[choice]["ingredients"]["water"]):
-                print("Sorry there is not enough water")
+            print("Sorry there is not enough water")
         elif resources["milk"] < (MENU[choice]["ingredients"]["milk"]):
-                print("Sorry there is not enough milk")
+            print("Sorry there is not enough milk")
         elif resources["coffee"] < (MENU[choice]["ingredients"]["coffee"]):
-                print("Sorry there is not enough coffee")
+            print("Sorry there is not enough coffee")
         else:
             if choice == "espresso":
                 drink_name = "espresso"
@@ -93,7 +101,6 @@ def coffee_machine():
                     resources["coffee"] -= (MENU["cappuccino"]["ingredients"]["coffee"])
                     print(f"Here is ${change} in change.")
                     print(f"Here is your {drink_name} ☕️. Enjoy!")
-
 
 coffee_machine()
 
