@@ -1,0 +1,5 @@
+OWM_api_key = "YOUR_KEY"
+twilio_account_sid = "YOUR_ID"
+twilio_auth_token = "YOUR_TOKEN"
+twilio_phone_num = "YOUR TWILIO PHONE NUMBER"
+my_phone_num = "YOUR PHONE NUMBER"
