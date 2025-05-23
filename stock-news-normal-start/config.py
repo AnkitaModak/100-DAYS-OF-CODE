@@ -1,0 +1,6 @@
+stock_api= "ALPHA VANTAGE STOCK API KEY"
+NEWS_API_KEY = "NEWS API API KEY"
+twilio_account_sid = "YOUR_ID"
+twilio_auth_token = "YOUR_TOKEN"
+twilio_phone_num = "YOUR TWILIO PHONE NUMBER"
+my_phone_num = "YOUR PHONE NUMBER"
