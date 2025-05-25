@@ -1,0 +1,8 @@
+your_weight = "Enter your weight in kg"
+your_height = "Enter your height in cm"
+your_age = "Enter your age"
+sheet_endpoint = "Enter your sheety url"
+api_id = "Nutritionix API ID"
+api_key = "Nutritionix API KEY"
+auth_username = "your basic authentication username"
+auth_password = "your basic authentication password"
