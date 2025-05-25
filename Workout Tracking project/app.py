@@ -18,9 +18,9 @@ exercise_headers = {
 exercise_text = input("Tell me which exercises you did: ")
 exercise_params = {
     "query" : exercise_text,
-    "weight_kg" : 70,
-    "height_cm" : 162.56,
-    "age" : 19
+    "weight_kg" : config.weight,
+    "height_cm" : config.height,
+    "age" : config.age
 }
 response = requests.post(url= exercise_endpoint , json= exercise_params , headers= exercise_headers)
 response.raise_for_status()
