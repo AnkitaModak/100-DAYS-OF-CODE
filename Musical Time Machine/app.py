@@ -7,8 +7,8 @@ spotify_client_id = config.SPOTIFY_CLIENT_ID
 spotify_client_secret = config.SPOTIFY_CLIENT_SECRET
 spotify_redirect_uri = "https://example.com"
 spotify_username = config.SPOTIFY_USERNAME
-#date = input("WHich year do you want to travel to? Type the date in this format YYYY-MM-DD:")
-date= "2025-01-26"
+date = input("WHich year do you want to travel to? Type the date in this format YYYY-MM-DD:")
+#date= "2025-01-26"
 header = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
 url = "https://www.billboard.com/charts/hot-100/2000-08-12/"
 response = requests.get(url=url , headers=header)
