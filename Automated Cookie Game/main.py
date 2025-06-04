@@ -10,9 +10,9 @@ driver = webdriver.Chrome(options= chrome_options)
 driver.maximize_window()
 driver.get("https://cookieclicker.eu/experiments/cookie/")
 cookie = driver.find_element(By.XPATH,'//*[@id="cookie"]')
-
+start_time = time.time()
 def click_cookie():
-    while True:
+    while time.time() - start_time < 300:
         cookie.click()
 
 def buy_upgrades():
