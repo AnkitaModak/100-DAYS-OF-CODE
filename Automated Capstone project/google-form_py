@@ -1,0 +1,20 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("detach" , True)
+driver = webdriver.Chrome(options=chrome_options)
+def fill_form(address , price , link):
+    driver.get("https://docs.google.com/forms/d/e/1FAIpQLSeJ3EmocK3o4zQLADFtHVZVit_cI5HUvQTfH9ExmG0zygTzVA/viewform?usp=header")
+    time.sleep(5)
+    address_filled = driver.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    price_filled= driver.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    link_filled = driver.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    time.sleep(3)
+    address_filled.send_keys(address)
+    price_filled.send_keys(price)
+    link_filled.send_keys(link)
+    time.sleep(3)
+    submit_button = driver.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div')
+    submit_button.click()
